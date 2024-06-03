@@ -1,0 +1,108 @@
+.courses-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f3f4f6;
+    min-height: 80vh;
+    padding: 20px;
+  
+    .courses-main {
+      flex: 1;
+      margin-right: 20px;
+  
+      .courses-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+  
+      .performance-metrics {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+  
+        .metric-card {
+          background-color: #203764;
+          padding: 20px;
+          border-radius: 10px;
+          text-align: center;
+          color: white;
+          flex: 1;
+          height: 150px; // Ajustar la altura para ser más rectangular
+          display: flex;
+          flex-direction: column;
+          justify-content: center; // Alinear verticalmente
+          align-items: center; // Alinear horizontalmente
+        }
+  
+        .metric-info {
+          margin-top: 10px;
+  
+          .metric-title {
+            font-size: 1.2rem;
+          }
+        }
+      }
+  
+      .courses-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+  
+      .courses-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+  
+        .course-card {
+          background-color: #e0f7fa;
+          padding: 10px 20px;
+          border-radius: 10px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+    }
+  
+    .tasks-section {
+      width: 250px;
+      background-color: #203764;
+      padding: 20px;
+      border-radius: 10px;
+      color: white;
+  
+      .tasks-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+  
+      .tasks-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+  
+        .task-item {
+          background-color: #fff;
+          color: #000;
+          padding: 10px;
+          border-radius: 5px;
+        }
+      }
+  
+      .add-task-btn {
+        width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #388e3c;
+        }
+      }
+    }
+  }
+  
