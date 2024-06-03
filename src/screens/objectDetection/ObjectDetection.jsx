@@ -1,6 +1,6 @@
 // src/screens/ObjectDetection.jsx
 import * as cocossd from "@tensorflow-models/coco-ssd";
-import "@tensorflow/tfjs-backend-webgl";
+import '@tensorflow/tfjs-backend-webgl';
 import { useEffect, useRef } from "react";
 
 const ObjectDetection = () => {

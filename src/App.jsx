@@ -1,5 +1,5 @@
 // src/App.jsx
-import React, { useContext, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Navigate, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import "./App.scss";

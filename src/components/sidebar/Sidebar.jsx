@@ -1,4 +1,3 @@
-// src/components/sidebar/Sidebar.jsx
 import { signOut } from 'firebase/auth';
 import { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import {
@@ -11,6 +10,16 @@ import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../../config/firebase'; // Actualiza la ruta a config/firebase
 import { SidebarContext } from '../../context/SidebarContext';
 import './Sidebar.scss';
+
+// Importa los iconos correctamente usando Vite
+import ChatbotIcon from '@/assets/icons/chatbot.svg';
+import CoursesIcon from '@/assets/icons/courses.svg';
+import HomeIcon from '@/assets/icons/home.svg';
+import LibraryIcon from '@/assets/icons/library.svg';
+import ProjectsIcon from '@/assets/icons/projects.svg';
+import ScholarshipsIcon from '@/assets/icons/scholarships.svg';
+import SpecializationIcon from '@/assets/icons/specialization.svg';
+import TutoringIcon from '@/assets/icons/tutoring.svg';
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar, openSidebar } = useContext(SidebarContext);
@@ -66,49 +75,49 @@ const Sidebar = () => {
             <ul className="menu-list">
               <li className="menu-item">
                 <Link to="/" className="menu-link">
-                  <img src="/src/assets/icons/home.svg" alt="Home Icon" className="menu-link-icon" />
+                  <img src={HomeIcon} alt="Home Icon" className="menu-link-icon" />
                   <span className="menu-link-text">Menu</span>
                 </Link>
               </li>
               <li className="menu-item">
                 <Link to="/courses" className="menu-link">
-                  <img src="/src/assets/icons/courses.svg" alt="Courses Icon" className="menu-link-icon" />
+                  <img src={CoursesIcon} alt="Courses Icon" className="menu-link-icon" />
                   <span className="menu-link-text">Mis cursos</span>
                 </Link>
               </li>
               <li className="menu-item">
                 <Link to="/chatbot" className="menu-link">
-                  <img src="/src/assets/icons/chatbot.svg" alt="Chatbot Icon" className="menu-link-icon" />
+                  <img src={ChatbotIcon} alt="Chatbot Icon" className="menu-link-icon" />
                   <span className="menu-link-text">ChatBot</span>
                 </Link>
               </li>
               <li className="menu-item">
                 <Link to="/tutoring" className="menu-link">
-                  <img src="/src/assets/icons/tutoring.svg" alt="Tutoring Icon" className="menu-link-icon" />
+                  <img src={TutoringIcon} alt="Tutoring Icon" className="menu-link-icon" />
                   <span className="menu-link-text">Tutoria</span>
                 </Link>
               </li>
               <li className="menu-item">
                 <Link to="/library" className="menu-link">
-                  <img src="/src/assets/icons/library.svg" alt="Library Icon" className="menu-link-icon" />
+                  <img src={LibraryIcon} alt="Library Icon" className="menu-link-icon" />
                   <span className="menu-link-text">Biblioteca</span>
                 </Link>
               </li>
               <li className="menu-item">
                 <Link to="/specialization" className="menu-link">
-                  <img src="/src/assets/icons/specialization.svg" alt="Specialization Icon" className="menu-link-icon" />
+                  <img src={SpecializationIcon} alt="Specialization Icon" className="menu-link-icon" />
                   <span className="menu-link-text">Malla y Especialización</span>
                 </Link>
               </li>
               <li className="menu-item">
                 <Link to="/scholarships" className="menu-link">
-                  <img src="/src/assets/icons/scholarships.svg" alt="Scholarships Icon" className="menu-link-icon" />
+                  <img src={ScholarshipsIcon} alt="Scholarships Icon" className="menu-link-icon" />
                   <span className="menu-link-text">Info de Becas</span>
                 </Link>
               </li>
               <li className="menu-item">
                 <Link to="/projects" className="menu-link">
-                  <img src="/src/assets/icons/projects.svg" alt="Projects Icon" className="menu-link-icon" />
+                  <img src={ProjectsIcon} alt="Projects Icon" className="menu-link-icon" />
                   <span className="menu-link-text">Proyectos</span>
                 </Link>
               </li>
