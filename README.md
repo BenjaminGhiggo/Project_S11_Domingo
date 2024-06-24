@@ -2,7 +2,7 @@
 npm run dev
 
 
-*(to be able to view the project on any device on your Wi-Fi network)
+*(to be able to view the project on any device on your Wi-Fi network): 
 npm run dev -- --host 
 
 
