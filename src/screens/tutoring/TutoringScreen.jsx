@@ -1,6 +1,9 @@
-import React from 'react';
+// import React from 'react';
+import TutoringImageIcon from '@/assets/icons/tutoring-image.svg';
 import TasksComponent from '../../components/tasks/TasksComponent';
 import './TutoringScreen.scss';
+
+
 
 const TutoringScreen = () => {
   const tutoringOptions = [
@@ -22,6 +25,12 @@ const TutoringScreen = () => {
             </div>
           ))}
         </div>
+
+          <div className='tutoring-icon'>
+            <img src={TutoringImageIcon} alt="Tutoring" />
+          </div>
+
+
       </div>
       <TasksComponent />
     </div>

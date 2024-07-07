@@ -1,0 +1,75 @@
+// src/screens/settings/SettingsScreen.scss
+.settings-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f3f4f6;
+  min-height: 80vh;
+  padding: 20px;
+
+  .settings-main {
+    flex: 1;
+    margin-right: 20px;
+
+    .settings-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-family: 'Comic Neue', cursive;
+    }
+
+    .settings-content {
+      background-color: #183263;
+      padding: 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+
+      .settings-section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        flex: 1;
+
+        .settings-button {
+          background-color: #ffffff;
+          padding: 10px 20px;
+          border-radius: 20px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+          &:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+          }
+
+          .settings-icon {
+            width: 48px;
+            height: 48px;
+            margin-right: 10px;
+          }
+
+          span {
+            font-size: 1rem;
+            font-family: 'Comic Neue', cursive;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .settings-image {
+        flex: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          max-width: 100%;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}

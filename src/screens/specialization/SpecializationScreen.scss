@@ -1,0 +1,59 @@
+// src/screens/specialization/SpecializationScreen.scss
+.specialization-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f3f4f6;
+  min-height: 80vh;
+  padding: 20px;
+  
+  .specialization-main {
+    flex: 1;
+    margin-right: 20px;
+    
+    .specialization-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    
+    .curriculum-content {
+      overflow-y: auto;
+      max-height: 70vh;
+      padding-right: 10px;
+
+      .cycle-section {
+        margin-bottom: 20px;
+        
+        .cycle-title {
+          background-color: #ff5252;
+          color: white;
+          padding: 10px;
+          text-align: center;
+          font-size: 1.2rem;
+          border-radius: 5px;
+          margin-bottom: 10px;
+        }
+        
+        .cycle-table {
+          width: 100%;
+          border-collapse: collapse;
+          background-color: #ffe0e0;
+          border: 1px solid #ff5252;
+          
+          th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ff5252;
+          }
+          
+          th {
+            background-color: #ff8a80;
+          }
+          
+          td {
+            background-color: #ffd6d6;
+          }
+        }
+      }
+    }
+  }
+}

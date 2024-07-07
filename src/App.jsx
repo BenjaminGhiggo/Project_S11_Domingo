@@ -17,6 +17,14 @@ import Login from "./screens/login/Login";
 import ObjectDetection from "./screens/objectDetection/ObjectDetection";
 import TutoringScreen from "./screens/tutoring/TutoringScreen"; // Asegúrate de importar TutoringScreen
 
+import LibraryScreen from './screens/library/LibraryScreen';
+import ProjectsScreen from './screens/projects/ProjectsScreen';
+import ScholarshipsScreen from './screens/scholarships/ScholarshipsScreen';
+import SpecializationScreen from './screens/specialization/SpecializationScreen';
+
+import SettingsScreen from './screens/settings/SettingsScreen';
+
+
 function App() {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const [user, loading, error] = useAuthState(auth);
@@ -55,12 +63,18 @@ function App() {
         ) : (
           <Route element={<BaseLayout />}>
             <Route path="/" element={<Navigate to="/dashboard" />} />
+            <Route path='/library' element={<LibraryScreen/>}/>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/courses" element={<CoursesScreen />} />
             <Route path="/chatbot" element={<Chatbot />} />
             <Route path="/deteccion" element={<ObjectDetection />} />
             <Route path="/tutoring" element={<TutoringScreen />} /> {/* Añadir la ruta de tutoría */}
             <Route path="*" element={<PageNotFound />} />
+            <Route path='/specialization' element={<SpecializationScreen/>}/>
+            <Route path='/scholarships' element={<ScholarshipsScreen/>}/>
+            <Route path='/projects' element={<ProjectsScreen/>}/>
+            <Route path='/settings' element={<SettingsScreen/>}/>
+
           </Route>
         )}
       </Routes>

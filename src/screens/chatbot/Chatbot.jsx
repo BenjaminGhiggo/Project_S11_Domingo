@@ -2,13 +2,14 @@ import * as cocossd from "@tensorflow-models/coco-ssd";
 import "@tensorflow/tfjs-backend-webgl";
 import axios from "axios";
 import { onAuthStateChanged } from "firebase/auth";
+import plantumlEncoder from 'plantuml-encoder';
 import { useEffect, useRef, useState } from "react";
-import AttachIcon from "../../assets/icons/attach-icon.svg"; // Actualiza la ruta
-import BotIcon from "../../assets/icons/bot-icon.svg"; // Actualiza la ruta
-import PhotoIcon from "../../assets/icons/photo-icon.svg"; // Actualiza la ruta
-import RecordIcon from "../../assets/icons/record-icon.svg"; // Actualiza la ruta
-import SendIcon from "../../assets/icons/send-icon.svg"; // Actualiza la ruta
-import UserIcon from "../../assets/icons/user-icon.svg"; // Actualiza la ruta
+import AttachIcon from "../../assets/icons/attach-icon.svg";
+import BotIcon from "../../assets/icons/bot-icon.svg";
+import PhotoIcon from "../../assets/icons/photo-icon.svg";
+import RecordIcon from "../../assets/icons/record-icon.svg";
+import SendIcon from "../../assets/icons/send-icon.svg";
+import UserIcon from "../../assets/icons/user-icon.svg";
 import { auth } from "../../config/firebase";
 import "./Chatbot.scss";
 
@@ -27,6 +28,7 @@ const Chatbot = () => {
   const [cameraActive, setCameraActive] = useState(false);
   const [stream, setStream] = useState(null);
   const [isBackCamera, setIsBackCamera] = useState(false);
+  const [markdownInput, setMarkdownInput] = useState("");
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -153,6 +155,16 @@ const Chatbot = () => {
     });
   };
 
+  const renderPlantUML = (code) => {
+    try {
+      const encoded = plantumlEncoder.encode(code);
+      return `http://www.plantuml.com/plantuml/svg/${encoded}`;
+    } catch (error) {
+      console.error("Error rendering PlantUML:", error);
+      return '';
+    }
+  };
+
   return (
     <div className="chatbot-page">
       <div className="chatbot-header">
@@ -221,7 +233,17 @@ const Chatbot = () => {
         )}
         {activeTab === "mapa" && (
           <div className="mapa-container">
-            {/* Contenido para la pestaña de Mapa */}
+            <textarea
+              className="markdown-input"
+              value={markdownInput}
+              onChange={(e) => setMarkdownInput(e.target.value)}
+              placeholder="Enter PlantUML code in Markdown format..."
+            />
+            {markdownInput && (
+              <div className="plantuml-output">
+                <img src={renderPlantUML(markdownInput)} alt="PlantUML Diagram" />
+              </div>
+            )}
           </div>
         )}
       </div>
